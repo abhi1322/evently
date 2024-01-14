@@ -1,4 +1,5 @@
-import { OurFileRouter } from "@/app/api/webhook/clerk/uploadthing/core";
+import { OurFileRouter } from "@/app/api/uploadthing/core";
 import { generateReactHelpers } from "@uploadthing/react/hooks";
 
-export const { useUploadThing, uploadFiles } = generateReactHelpers<OurFileRouter>();
+export const { useUploadThing, uploadFiles } =
+  generateReactHelpers<OurFileRouter>();
