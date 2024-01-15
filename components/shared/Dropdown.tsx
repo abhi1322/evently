@@ -20,7 +20,10 @@ import {
 import { ICategory } from "@/lib/database/models/category.model";
 import { startTransition, useEffect, useState } from "react";
 import { Input } from "../ui/input";
-import { createCategory, getAllCategory } from "@/lib/actions/category.action";
+import {
+  createCategory,
+  getAllCategories,
+} from "@/lib/actions/category.action";
 
 type DropDownProps = {
   value: string;
@@ -41,12 +44,12 @@ const Dropdown = ({ onChangeHandler, value }: DropDownProps) => {
 
   useEffect(() => {
     const getCategories = async () => {
-      const categorysList = await getAllCategory();
+      const categorysList = await getAllCategories();
 
       categories && setCategories(categorysList as ICategory[]);
     };
 
-    getCategories()
+    getCategories();
   }, []);
 
   return (
